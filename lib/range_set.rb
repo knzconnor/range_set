@@ -71,6 +71,7 @@ class Range
     end
   end
   
+  #addition - full range enclosed within mutual endpoints
   def +(rng)
     return self unless rng
     [self.min,rng.min].min..[self.max,rng.max].max
