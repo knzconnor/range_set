@@ -71,6 +71,11 @@ class Range
     end
   end
   
+  def +(rng)
+    return self unless rng
+    [self.min,rng.min].min..[self.max,rng.max].max
+  end
+  
   def <(value)
     value > self.max
   end

@@ -60,6 +60,12 @@ class RangeTest < Test::Unit::TestCase
     assert_equal( (10..20) - RangeSet.new(1..12, 16..25), (12..16) )
   end
   
+  def test_addition
+    assert (1..9), (3..7) + (1..9)
+    assert (1..9), (1..7) + (3..9)
+    assert (1..9), (1..3) + (7..9)
+  end
+  
   def test_union
     assert_equal( (3..7) | nil, (3..7) )
     assert_equal( (1..7) | (3..9), (1..9) )
